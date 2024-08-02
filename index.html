@@ -52,19 +52,18 @@ text: 'Запустить СЗ'
 });
 Telegram.WebApp.MainButton.onClick(function () {
 	Telegram.WebApp.showAlert('Main Button was clicked')
-});	
-Telegram.WebApp.MainButton.show();
+});
 
 // Function to toggle main TWA button
-function toggleMainButton() {
-    if (Telegram.WebApp.MainButton.isVisible) {
-        Telegram.WebApp.MainButton.hide();
-    } else {
-        Telegram.WebApp.MainButton.show();
-    }
-};
+// function toggleMainButton() {
+//    if (Telegram.WebApp.MainButton.isVisible) {
+//        Telegram.WebApp.MainButton.hide();
+//    } else {
+//        Telegram.WebApp.MainButton.show();
+//    }
+//};
 
-toggleMainButton();
+//toggleMainButton();
 
 var splashScreen = document.querySelector('.splash');
 // splashScreen.addEventListener('click',()=>{setTimeout(()=>{splashScreen.classList.add('hidden');})})
@@ -75,6 +74,8 @@ var splashScreen = document.querySelector('.splash');
    document.addEventListener('DOMContentLoaded', () => {
     setTimeout(removeSplash, 1500);
     });
+
+Telegram.WebApp.MainButton.show();
 </script>
 
 <style>
@@ -214,9 +215,9 @@ body {
 <!-- End of player area -->
 <!-- Score area -->
 <div class="row no-gutters" style="position:fixed;bottom:0px;">
-  <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-secondary btn-block border border-light shadow" id="new-button" title="Новая игра">Запуск СЗ</button></div>
-  <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="hit-button" title="Добавить карточку">Доработка</button></div>
-  <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="stand-button" title="Готов к проверке">Согласовать</button></div>
+<!--  <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-secondary btn-block border border-light shadow" id="new-button" title="Новая игра">Запуск СЗ</button></div> -->
+  <div class="col-6" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="hit-button" title="Добавить карточку">Доработка</button></div>
+  <div class="col-6" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="stand-button" title="Готов к проверке">Согласовать</button></div>
 </div>
 <!-- End of score area -->
 </div>
