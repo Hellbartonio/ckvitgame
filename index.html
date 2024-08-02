@@ -47,7 +47,6 @@ Telegram.WebApp.onEvent('themeChanged', function() {
 document.documentElement.className = Telegram.WebApp.colorScheme;
 });
 
-
 // Function to toggle main TWA button
 // function toggleMainButton() {
 //    if (Telegram.WebApp.MainButton.isVisible) {
@@ -327,10 +326,12 @@ function showPopupWin() {
 
 function alertLoss(id) {
   showPopupLoss();
+  Telegram.WebApp.MainButton.show();
 }
 
 function alertWin(id) {
   showPopupWin();
+  Telegram.WebApp.MainButton.show();
 }
 
 function clearMessage(id) {
@@ -504,6 +505,7 @@ text: 'Запустить СЗ'
 });
 Telegram.WebApp.MainButton.onClick(function () {
 newRound(gameBoard, id);
+Telegram.WebApp.MainButton.hide();
 });
 Telegram.WebApp.MainButton.show();
 	
