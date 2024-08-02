@@ -168,11 +168,11 @@ body {
 <!-- Game area -->
 <div class="game-area">
 <div class="container">
-<p class="col-12 text-center value row no-gutters">Сила обстоятельств: <span id="dealer-score"></span></p>
+<p id="p-dealer-score" class="invisible col-12 text-center value row no-gutters">Сила обстоятельств: <span id="dealer-score"></span></p>
 <div class="row dealer-area no-gutters">
   <div class="col-12 row no-gutters" id="dealer-cards"></div>
 </div>
-<p class="col-12 text-center value row no-gutters">Сила возможностей: <span id="player-score"></span></p>
+<p id="p-player-score" class="invisible col-12 text-center value row no-gutters">Сила возможностей: <span id="player-score"></span></p>
 <!-- Player cards -->
 <div class="row player-area no-gutters">
 <div class="col-12 row no-gutters" id="player-cards"></div>
@@ -303,6 +303,8 @@ function alertLoss(id) {
   Telegram.WebApp.MainButton.show();
   id.hitButton.addClass('invisible');
   id.standButton.addClass('invisible');
+  id.pdealerscore.addClass('invisible');
+  id.pplayerscore.addClass('invisible');
 }
 
 function alertWin(id) {
@@ -310,6 +312,8 @@ function alertWin(id) {
   Telegram.WebApp.MainButton.show();
   id.hitButton.addClass('invisible');
   id.standButton.addClass('invisible');
+  id.pdealerscore.addClass('invisible');
+  id.pplayerscore.addClass('invisible');
 }
 
 function clearMessage(id) {
@@ -474,7 +478,9 @@ let id = {
 		gamesPlayed: $('#games-played'),
 		gamesWon: $('#games-won'),
 		gamesLost: $('#games-lost'),
-		messageArea: $('#message-area')
+		messageArea: $('#message-area'),
+	  	pdealerscore: $('#p-dealer-score');,
+  		pplayerscore: $('#p-player-score');
 	  };
 	
 // Show main button
@@ -484,6 +490,8 @@ Telegram.WebApp.MainButton.onClick(function () {
   Telegram.WebApp.MainButton.hide();
   id.hitButton.removeClass('invisible');
   id.standButton.removeClass('invisible');
+  id.pdealerscore.addClass('invisible');
+  id.pplayerscore.addClass('invisible');
 });
 Telegram.WebApp.MainButton.show();
 	
