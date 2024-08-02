@@ -36,7 +36,7 @@
     transition : 2s;
     display : none;
   }
-  </style>
+</style>
 
 <script>
 Telegram.WebApp.ready();
@@ -49,65 +49,64 @@ var splashScreen = document.querySelector('.splash');
    document.addEventListener('DOMContentLoaded', () => {
     setTimeout(removeSplash, 1500);
     });
-
-  </script>
-
-  <style>
-    body {
-      --bg-color: var(--tg-theme-bg-color);
-      background-color: var(--bg-color);
-      color: var(--tg-theme-text-color);
-      padding: 0;
-      color-scheme: var(--tg-color-scheme);
-    }
-
-    a {
-      color: var(--tg-theme-link-color);
-    }
-
-    #viewport {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        height: var(--tg-viewport-stable-height, 100vh);
-        pointer-events: none;
-        transition: all .2s ease;
-    }
-    #viewport:after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-            bottom: 0;
-            border-width: 4px;
-            border-style: solid;
-            border-image: linear-gradient(45deg, rgba(64, 224, 208, .5), rgba(173, 255, 47, .5)) 1;
-        }
-
-        #viewport-params-size,
-        #viewport-params-expand {
-            content: attr(text);
-            position: absolute;
-            display: inline-block;
-            background: var(--tg-theme-link-color, rgb(64, 224, 208));
-            right: 4px;
-            left: auto;
-            font-size: 8px;
-            padding: 4px;
-            vertical-align: top;
-        }
-        #viewport-params-size {
-            top: 4px;
-        }
-        #viewport-params-expand {
-            top: 30px;
-        }
-</style>
+</script>
 
 <style>
+body {
+--bg-color: var(--tg-theme-bg-color);
+background-color: var(--bg-color);
+color: var(--tg-theme-text-color);
+padding: 0;
+color-scheme: var(--tg-color-scheme);
+}
+
+a {
+color: var(--tg-theme-link-color);
+}
+
+#viewport {
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+height: var(--tg-viewport-stable-height, 100vh);
+pointer-events: none;
+transition: all .2s ease;
+}
+	
+#viewport:after {
+content: '';
+display: block;
+position: absolute;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+border-width: 4px;
+border-style: solid;
+border-image: linear-gradient(45deg, rgba(64, 224, 208, .5), rgba(173, 255, 47, .5)) 1;
+}
+
+#viewport-params-size,
+#viewport-params-expand {
+content: attr(text);
+position: absolute;
+display: inline-block;
+background: var(--tg-theme-link-color, rgb(64, 224, 208));
+right: 4px;
+left: auto;
+font-size: 8px;
+padding: 4px;
+vertical-align: top;
+}
+	
+#viewport-params-size {
+top: 4px;
+}
+	
+#viewport-params-expand {
+top: 30px;
+}
 
 .container {
   padding: 5px;
@@ -142,15 +141,7 @@ body {
   height: 100%;
 	width: 100%;
 }
-/* Убрать отступы
-.dealer-area {
-  height: 40vh;
-}
 
-.player-area {
-  height: 40vh;
-}
-*/
 .shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -181,32 +172,32 @@ body {
   transform: translateY(-50%); 
 }
 </style>
-		<!-- Game area -->
-		<div class="game-area">
-			<div class="container">
-        <p class="col-12 text-center value row no-gutters">Сила обстоятельств: <span id="dealer-score"></span></p>
-				<div class="row dealer-area no-gutters">
-  		    <div class="col-12 row no-gutters" id="dealer-cards"></div>
-			  </div>
-		  	<p class="col-12 text-center value row no-gutters">Сила возможностей: <span id="player-score"></span></p>
-  	<!-- Player cards -->
-		  <div class="row player-area no-gutters">
-			  <div class="col-12 row no-gutters" id="player-cards"></div>
-			</div>
-    <!-- End of player area -->
 
-			  <!-- Score area -->
-			  <div class="row no-gutters" style="position:fixed;bottom:0px;">
-          <div id="message-area" class="col-12 alert invisible text-center" role="alert"></div>
-			    <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-secondary btn-block border border-light shadow" id="new-button" title="Новая игра">Запуск СЗ</button></div>
-			    <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="hit-button" title="Добавить карточку">Доработка</button></div>
-			    <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="stand-button" title="Готов к проверке">Согласовать</button></div>
-			  </div>
-        <!-- End of score area -->
-      </div>
-		</div>
+<!-- Game area -->
+<div class="game-area">
+<div class="container">
+<p class="col-12 text-center value row no-gutters">Сила обстоятельств: <span id="dealer-score"></span></p>
+<div class="row dealer-area no-gutters">
+  <div class="col-12 row no-gutters" id="dealer-cards"></div>
+</div>
+<p class="col-12 text-center value row no-gutters">Сила возможностей: <span id="player-score"></span></p>
+<!-- Player cards -->
+<div class="row player-area no-gutters">
+<div class="col-12 row no-gutters" id="player-cards"></div>
+</div>
+<!-- End of player area -->
+<!-- Score area -->
+<div class="row no-gutters" style="position:fixed;bottom:0px;">
+  <div id="message-area" class="col-12 alert invisible text-center" role="alert"></div>
+  <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-secondary btn-block border border-light shadow" id="new-button" title="Новая игра">Запуск СЗ</button></div>
+  <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="hit-button" title="Добавить карточку">Доработка</button></div>
+  <div class="col-4" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="stand-button" title="Готов к проверке">Согласовать</button></div>
+</div>
+<!-- End of score area -->
+</div>
+</div>
+
 <script>
-
 const PLAYER_CARD_SET = {
   suits: ['H', 'D'],
   ranks: [2, 3, 4, 5, 6, 7, 8, 9, 0, 'J', 'Q', 'K', 'Ace'],
@@ -306,7 +297,6 @@ function showPopup() {
       title: 'Фиаско!',
       message: 'Повезёт в другой раз.',
       buttons: [
-          {id: 'link', type: 'default', text: 'Open ton.org'},
           {type: 'cancel'},
       ]
   }, function(btn) {
