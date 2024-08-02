@@ -302,10 +302,26 @@ function newRound(gameBoard, id) {
   drawGameBoard(gameBoard, id);
 }
 
+function showPopup() {
+  Telegram.WebApp.showPopup({
+      title: 'Фиаско!',
+      message: 'Повезёт в другой раз.',
+      buttons: [
+          {id: 'link', type: 'default', text: 'Open ton.org'},
+          {type: 'cancel'},
+      ]
+  }, function(btn) {
+      if (btn === 'link') {
+          Telegram.WebApp.openLink('https://ton.org/');
+      }
+  });
+};
+
 function alertLoss(id) {
-  id.messageArea.addClass('alert-danger');
-  id.messageArea.removeClass('invisible');
-  id.messageArea.html("<b>Фиаско!</b>")
+  showPopup();	
+//  id.messageArea.addClass('alert-danger');
+//  id.messageArea.removeClass('invisible');
+//  id.messageArea.html("<b>Фиаско!</b>")
 }
 
 function alertWin(id) {
