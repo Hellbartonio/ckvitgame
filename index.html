@@ -309,7 +309,11 @@ function newRound(gameBoard, id) {
 }
 
 function showPopupLoss() {
-  Telegram.WebApp.showConfirm('<b>Фиаско!</b><br> Повезёт в другой раз.');
+  Telegram.WebApp.showPopup({
+      title: 'Фиаско!',
+      message: 'Повезёт в другой раз.',
+      buttons: [{type: 'ok'},],
+  });
 };
 
 function showPopupWin() {
