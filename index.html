@@ -51,9 +51,20 @@ Telegram.WebApp.MainButton.setParams({
 text: 'Запустить СЗ'
 });
 Telegram.WebApp.MainButton.onClick(function () {
-Telegram.WebApp.showAlert('Main Button was clicked')
+	Telegram.WebApp.showAlert('Main Button was clicked')
 });	
 Telegram.WebApp.MainButton.show();
+
+// Function to toggle main TWA button
+function toggleMainButton() {
+    if (Telegram.WebApp.MainButton.isVisible) {
+        Telegram.WebApp.MainButton.hide();
+    } else {
+        Telegram.WebApp.MainButton.show();
+    }
+};
+
+toggleMainButton();
 
 var splashScreen = document.querySelector('.splash');
 // splashScreen.addEventListener('click',()=>{setTimeout(()=>{splashScreen.classList.add('hidden');})})
