@@ -47,13 +47,6 @@ Telegram.WebApp.onEvent('themeChanged', function() {
 document.documentElement.className = Telegram.WebApp.colorScheme;
 });
 
-// Show main button
-Telegram.WebApp.MainButton.setParams({
-text: 'Запустить СЗ'
-});
-Telegram.WebApp.MainButton.onClick(function () {
-newRound(gameBoard, id);
-});
 
 // Function to toggle main TWA button
 // function toggleMainButton() {
@@ -67,16 +60,13 @@ newRound(gameBoard, id);
 //toggleMainButton();
 
 var splashScreen = document.querySelector('.splash');
-// splashScreen.addEventListener('click',()=>{setTimeout(()=>{splashScreen.classList.add('hidden');})})
-   function removeSplash() {
-    splashScreen.style.opacity = 0;
-    splashScreen.classList.add('hidden');
-   }
-   document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(removeSplash, 1500);
-    });
-
-Telegram.WebApp.MainButton.show();
+function removeSplash() {
+splashScreen.style.opacity = 0;
+splashScreen.classList.add('hidden');
+}
+document.addEventListener('DOMContentLoaded', () => {
+setTimeout(removeSplash, 1500);
+});
 </script>
 
 <style>
@@ -491,13 +481,10 @@ function createDealerDeck(cardSet) {
   }
   return dealerdeck;
 }
-</script>
 
-<script>
-
-	$(document).ready(function() {
-	let gameBoard = initializeNewGameBoard();
-	let id = {
+$(document).ready(function() {
+let gameBoard = initializeNewGameBoard();
+let id = {
 		hitButton: $('#hit-button'),
 		standButton: $('#stand-button'),
 		newButton: $('#new-button'),
@@ -511,7 +498,14 @@ function createDealerDeck(cardSet) {
 		messageArea: $('#message-area')
 	  };
 	
-//	alertNew(id);
+// Show main button
+Telegram.WebApp.MainButton.setParams({
+text: 'Запустить СЗ'
+});
+Telegram.WebApp.MainButton.onClick(function () {
+newRound(gameBoard, id);
+});
+Telegram.WebApp.MainButton.show();
 	
 	id.newButton.click(function() {
 	  newRound(gameBoard, id);
