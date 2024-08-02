@@ -301,11 +301,15 @@ function showPopupWin() {
 function alertLoss(id) {
   showPopupLoss();
   Telegram.WebApp.MainButton.show();
+  id.hitButton.addClass('invisible');
+  id.standButton.addClass('invisible');
 }
 
 function alertWin(id) {
   showPopupWin();
   Telegram.WebApp.MainButton.show();
+  id.hitButton.addClass('invisible');
+  id.standButton.addClass('invisible');
 }
 
 function clearMessage(id) {
