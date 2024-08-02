@@ -292,37 +292,40 @@ function newRound(gameBoard, id) {
   drawGameBoard(gameBoard, id);
 }
 
-function showPopup() {
+function showPopupLoss() {
   Telegram.WebApp.showPopup({
       title: 'Фиаско!',
       message: 'Повезёт в другой раз.',
-      buttons: [
-          {type: 'cancel'},
-      ]
-  }, function(btn) {
-      if (btn === 'link') {
-          Telegram.WebApp.openLink('https://ton.org/');
-      }
+      buttons: [{type: 'cancel'},],
+  });
+};
+
+function showPopupWin() {
+  Telegram.WebApp.showPopup({
+      title: 'Победа!',
+      message: 'Перезапускай СЗ, чтобы закрепить успех.',
+      buttons: [{type: 'cancel'},],
+  });
+};
+
+function showPopupNew() {
+  Telegram.WebApp.showPopup({
+      title: 'Привет!',
+      message: 'Запускай СЗ, чтобы начать! Цель игры - набрать силу возможностей больше обстоятельств, но меньше 21.',
+      buttons: [{type: 'cancel'},],
   });
 };
 
 function alertLoss(id) {
-  showPopup();	
-//  id.messageArea.addClass('alert-danger');
-//  id.messageArea.removeClass('invisible');
-//  id.messageArea.html("<b>Фиаско!</b>")
+  showPopupLoss();
 }
 
 function alertWin(id) {
-  id.messageArea.addClass('alert-success');
-  id.messageArea.removeClass('invisible');
-  id.messageArea.html('<b>Победа!</b>')
+  showPopupWin();
 }
 
 function alertNew(id) {
-  id.messageArea.addClass('alert-secondary');
-  id.messageArea.removeClass('invisible');
-  id.messageArea.html('Запускай СЗ, чтобы начать!')
+  showPopupNew();
 }
 
 function clearMessage(id) {
