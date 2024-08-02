@@ -307,14 +307,6 @@ function showPopupWin() {
   });
 };
 
-function showPopupNew() {
-  Telegram.WebApp.showPopup({
-      title: 'Привет!',
-      message: 'Запускай СЗ, чтобы начать! Цель игры - набрать силу возможностей больше обстоятельств, но меньше 21.',
-      buttons: [{type: 'cancel'},],
-  });
-};
-
 function alertLoss(id) {
   showPopupLoss();
 }
