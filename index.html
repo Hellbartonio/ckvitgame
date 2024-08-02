@@ -163,18 +163,6 @@ body {
   transform: translateY(-50%); 
 }
 
-.btn-primary {
-  background-color: #a41e22;
-}
-
-.btn-primary:hover {
-  background-color: #81181c;
-}
-
-.btn-primary:active {
-  background-color: #621315;
-}
-
 </style>
 
 <!-- Game area -->
@@ -192,8 +180,8 @@ body {
 <!-- End of player area -->
 <!-- Score area -->
 <div class="row col-12 no-gutters" style="position:fixed;bottom:0px;">
-  <div class="col-6" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="hit-button" title="Добавить карточку">На доработку</button></div> 
-  <div class="col-6" style="padding:2px;"><button type="button" class="btn btn-primary btn-block border border-light shadow" id="stand-button" title="Готов к проверке">На утверждение</button></div>
+  <div class="col-6" style="padding:2px;"><button type="button" class="invisible btn btn-primary btn-block border border-light shadow" id="hit-button" title="Добавить карточку">На доработку</button></div> 
+  <div class="col-6" style="padding:2px;"><button type="button" class="invisible btn btn-primary btn-block border border-light shadow" id="stand-button" title="Готов к проверке">На утверждение</button></div>
 </div>
 <!-- End of score area -->
 </div>
@@ -486,12 +474,12 @@ let id = {
 	  };
 	
 // Show main button
-Telegram.WebApp.MainButton.setParams({
-text: 'Запустить СЗ'
-});
+Telegram.WebApp.MainButton.setParams({text: 'Запустить СЗ'});
 Telegram.WebApp.MainButton.onClick(function () {
-newRound(gameBoard, id);
-Telegram.WebApp.MainButton.hide();
+  newRound(gameBoard, id);
+  Telegram.WebApp.MainButton.hide();
+  id.hit-button.removeClass('invisible');
+  id.stand-button.removeClass('invisible');
 });
 Telegram.WebApp.MainButton.show();
 	
