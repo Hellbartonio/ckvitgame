@@ -46,15 +46,6 @@ Telegram.WebApp.expand();
 Telegram.WebApp.onEvent('themeChanged', function() {
 document.documentElement.className = Telegram.WebApp.colorScheme;
 });
-
-var splashScreen = document.querySelector('.splash');
-function removeSplash() {
-splashScreen.style.opacity = 0;
-splashScreen.classList.add('hidden');
-}
-document.addEventListener('DOMContentLoaded', () => {
-setTimeout(removeSplash, 1500);
-});
 </script>
 
 <style>
@@ -489,7 +480,16 @@ Telegram.WebApp.MainButton.onClick(function () {
   id.pdealerscore.removeClass('invisible');
   id.pplayerscore.removeClass('invisible');
 });
+
+var splashScreen = document.querySelector('.splash');
+function removeSplash() {
+splashScreen.style.opacity = 0;
+splashScreen.classList.add('hidden');
+}
+document.addEventListener('DOMContentLoaded', () => {
+setTimeout(removeSplash, 1500);
 Telegram.WebApp.MainButton.show();
+});
 	
 	id.newButton.click(function() {
 	  newRound(gameBoard, id);
