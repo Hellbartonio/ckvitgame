@@ -47,17 +47,6 @@ Telegram.WebApp.onEvent('themeChanged', function() {
 document.documentElement.className = Telegram.WebApp.colorScheme;
 });
 
-// Function to toggle main TWA button
-// function toggleMainButton() {
-//    if (Telegram.WebApp.MainButton.isVisible) {
-//        Telegram.WebApp.MainButton.hide();
-//    } else {
-//        Telegram.WebApp.MainButton.show();
-//    }
-//};
-
-//toggleMainButton();
-
 var splashScreen = document.querySelector('.splash');
 function removeSplash() {
 splashScreen.style.opacity = 0;
@@ -139,10 +128,6 @@ body {
   padding: 5px;
 }
 
-.btn-primary {
-  background-color: #a41e22;
-}
-
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -170,17 +155,6 @@ body {
   color: white;
   text-align: left;
   display: inline;
-}
-
-.score {
-  height: 100%;
-  padding: 0px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  background: #a41e22;
-  display: block;
 }
 
 .vcenter{
